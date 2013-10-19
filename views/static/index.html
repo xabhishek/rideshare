@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Passenger</title>
+	<style type="text/css">
+	
+	
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<form onsubmit="return false">
+			<input class="name" type="text" placeholder="Name">
+			<input class="submit" type="submit" placeholder="Go">
+		</form>
+	</div>
+	<script>
+	$("input.submit").click(function(e){
+		var data = JSON.stringify({name: $("input.name").val(), time: "2pm"});
+		$.ajax("/save", {
+    		data: data,
+    		contentType : "application/json",
+    		type : "POST"
+		});
+	});
+	</script>
+</body>
+</html>
