@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Passenger</title>
+	<style type="text/css">
+	
+	
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<form onsubmit="return false">
+			<input class="name" type="text" placeholder="Name">
+			<input class="submit" type="submit" placeholder="Go">
+		</form>
+	</div>
+	<script>
+	$("input.submit").click(function(e){
+		$.post( "/save", {name: $("input.name").val(), time: "2pm"});
+	});
+	</script>
+</body>
+</html>
